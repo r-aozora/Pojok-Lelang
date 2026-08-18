@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  Pojok-Lelang:
+    build:
+      context: '.'
+      args:
+        uid: 1000
+    container_name: Pojok-Lelang
+    ports:
+      - 80:80
+    environment:
+      - APACHE_RUN_USER=1000
+      - APACHE_RUN_GROUP=1000
+    volumes:
+      - .:/var/www/html
